@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/headerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constrainedWidth="true"
+        android:background="?attr/selectableItemBackground"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_description"
+            style="@style/TextAppearance.AppCompat"
+            android:gravity="center|start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/image_description"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_arrow_drop_down_gray"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/header_nav"
+        app:elevation="0dp"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@android:color/white"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:itemTextAppearanceActive="@style/TextAppearance.AppCompat.Caption"
+        app:itemTextAppearanceInactive="@style/TextAppearance.AppCompat.Caption"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_description"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/colorGray"
+        app:menu="@menu/header_nav_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uploaderLayout"
+        app:layout_constraintTop_toBottomOf="@id/header_nav"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/uploaderThumbnail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_keyboard_arrow_up_red"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/uploaderName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/uploaderThumbnail"
+            android:gravity="center|start"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            tools:text="1234"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_keyboard_arrow_up_red"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_description"
+        android:animateLayoutChanges="true"
+        app:layout_constraintTop_toBottomOf="@id/uploaderLayout"
+        android:background="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/content_description_textview"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="8dp"
+            android:text="@string/lorem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

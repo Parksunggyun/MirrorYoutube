@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:ignore="contentDescription">
+
+    <FrameLayout
+        android:id="@+id/page_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/detailVideoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#000000" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/videoDetailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@drawable/border_lgtgray"
+        app:layout_constraintTop_toBottomOf="@id/bottom_nav">
+
+
+        <Space
+            android:id="@+id/emptySpace"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginBottom="-5dp"
+            android:background="?android:windowBackground"
+            android:scaleType="fitXY"
+            android:src="@drawable/video_01_moment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:2.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/videoTitle"
+            app:layout_constraintStart_toEndOf="@id/emptySpace"
+            app:layout_constraintEnd_toStartOf="@id/playImage"
+            app:layout_constraintTop_toTopOf="parent"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/videoUploaderName"
+            app:layout_constraintTop_toBottomOf="@id/videoTitle"
+            app:layout_constraintStart_toEndOf="@id/emptySpace"
+            app:layout_constraintEnd_toStartOf="@id/playImage"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/playImage"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:alpha="0"
+            android:background="@drawable/ripple_rect"
+            android:src="@drawable/ic_pause_black"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/clearImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/clearImage"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:alpha="0"
+            android:background="@drawable/ripple_rect"
+            android:src="@drawable/ic_clear_black"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <SurfaceView
+        android:id="@+id/videoImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/videoDetailLayout"
+        app:layout_constraintDimensionRatio="H,1:2.5"
+        app:layout_constraintStart_toStartOf="@id/videoDetailLayout"
+        app:layout_constraintTop_toTopOf="@id/videoDetailLayout" />
+
+
+    <FrameLayout
+        android:id="@+id/recyclerview_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/videoDetailLayout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recommendListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@color/colorGray"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="@id/videoDetailLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/videoDetailLayout" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/border_lgtgray"
+        app:itemIconTint="@color/colorGray"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Caption"
+        app:itemTextAppearanceActive="@style/TextAppearance.AppCompat.Caption"
+        app:itemTextAppearanceInactive="@style/TextAppearance.AppCompat.Caption"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

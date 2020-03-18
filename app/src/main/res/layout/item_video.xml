@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="@drawable/ripple_rect"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:background="@drawable/ripple_rect_gray"
+        android:id="@+id/videoThumbnailImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintDimensionRatio="2:1"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toBottomOf="@id/videoThumbnailImageView"
+        android:paddingBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/uploaderImgView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/videoDescriptionTxtView"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_margin="12dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:scaleType="fitXY"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/videoDescriptionTxtView"
+            android:padding="4dp"
+            android:textColor="@color/colorGray"
+            app:layout_constraintEnd_toStartOf="@id/menuImgView"
+            app:layout_constraintStart_toEndOf="@id/uploaderImgView"
+            app:layout_constraintTop_toTopOf="@id/uploaderImgView"
+            tools:text="asddjdsfmkjwekljflwijfdkjfwlkejf;lakjsd;flkj;lkj;ajsd;fjkjl;"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/videoUploaderTxtView"
+            android:padding="4dp"
+            android:textColor="@color/colorGray"
+            app:layout_constraintEnd_toStartOf="@id/menuImgView"
+            app:layout_constraintStart_toStartOf="@id/videoDescriptionTxtView"
+            app:layout_constraintTop_toBottomOf="@id/videoDescriptionTxtView"
+            tools:text="asddjdsfmkjwekljflwijfdkjfwlkejf;lakjsd;flkj;lkj;ajsd;fjkjl;"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/menuImgView"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/ic_more_vert_gray"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toEndOf="@id/videoDescriptionTxtView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/uploaderImgView"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

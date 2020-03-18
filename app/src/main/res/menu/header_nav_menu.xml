@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/header_thumb_up"
+        android:checked="false"
+        android:icon="@drawable/ic_thumb_up_gray"
+        android:title="@string/text_header_thumb_up"/>
+    <item
+        android:id="@+id/header_thumb_down"
+        android:checked="false"
+        android:icon="@drawable/ic_thumb_down_gray"
+        android:title="@string/text_header_thumb_down"/>
+    <item
+        android:id="@+id/header_share"
+        android:checked="false"
+        android:icon="@drawable/ic_share_gray"
+        android:title="@string/text_header_share"/>
+    <item
+        android:id="@+id/header_file_download"
+        android:checked="false"
+        android:icon="@drawable/ic_file_download_gray"
+        android:title="@string/text_header_file_download"/>
+    <item
+        android:id="@+id/header_file_download2"
+        android:checked="false"
+        android:icon="@drawable/ic_file_download_gray"
+        android:title="@string/text_header_file_download"/>
+
+</menu>
